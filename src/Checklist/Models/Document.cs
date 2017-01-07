@@ -9,6 +9,8 @@ namespace Checklist.Models
             Answers = new List<Answer>();
         }
         public int Id { get; set; }
+        public bool Approved { get; set; }
+        public DateTime DateApproved { get; set; }
         public DateTime DateUploaded { get; set; }
         public DateTime? DateChanged { get; set; }
         public int DivisionId { get; set; }
