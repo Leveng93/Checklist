@@ -1,6 +1,6 @@
 namespace Checklist.Models
 {
-    public class Answer : IEntityBase
+    class Answer : IEntityBase
     {
         public int Id { get; set; }
         public string Value { get; set; }
