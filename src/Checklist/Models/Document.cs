@@ -15,8 +15,6 @@ namespace Checklist.Models
         public DateTime? DateChanged { get; set; }
         public int UserId { get; set; }
         public int ShopId { get; set; }
-
-        public virtual Division Division { get; set; }
         public virtual User User { get; set; }
         public virtual Shop Shop { get; set; }
         public virtual ICollection<Answer> Answers { get; set; }
