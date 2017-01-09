@@ -17,7 +17,7 @@ namespace Checklist.Infrastructure.Repositories
         }
         public void Add(T entity)
         {
-            throw new NotImplementedException();
+            
         }
 
         public IEnumerable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties)
