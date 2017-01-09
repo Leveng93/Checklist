@@ -17,7 +17,6 @@ namespace Checklist.Models
         public string Salt { get; set; }
         public bool IsLocked { get; set; }
         public DateTime DateCreated { get; set; }
-        public int DivisionId { get; set; }
         public virtual Division Division { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
     }

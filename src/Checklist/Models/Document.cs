@@ -13,7 +13,6 @@ namespace Checklist.Models
         public DateTime DateApproved { get; set; }
         public DateTime DateUploaded { get; set; }
         public DateTime? DateChanged { get; set; }
-        public int DivisionId { get; set; }
         public int UserId { get; set; }
         public int ShopId { get; set; }
 
