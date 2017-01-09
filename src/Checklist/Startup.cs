@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Checklist.Infrastructure.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -26,6 +28,20 @@ namespace Checklist
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            string sqlConnectionString = Configuration["ConnectionStrings:DefaultConnection"];
+            bool useInMemoryProvider = bool.Parse(Configuration["Data:ChecklistConnection:InMemoryProvider"]);
+
+            services.AddDbContext<ChecklistContext>(options => {
+                switch (useInMemoryProvider)
+                {
+                    case true:
+                        options.UseInMemoryDatabase();
+                        break;
+                    default:
+                        options.UseSqlServer(sqlConnectionString);
+                        break;
+                }
+            });
             services.AddMvc();
         }
 
