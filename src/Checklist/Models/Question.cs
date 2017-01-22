@@ -7,10 +7,8 @@ namespace Checklist.Models
         public int DivisionId { get; set; }
         public int QuestionBlockId { get; set; }
         public int QuestionSectionId { get; set; }
-        public int ShopId { get; set; }
         public virtual Division Division { get; set; }
         public virtual QuestionBlock QuestionBlock { get; set; }
         public virtual QuestionSection QuestionSection { get; set; }
-        public virtual Shop Shop { get; set; }
     }
 }
